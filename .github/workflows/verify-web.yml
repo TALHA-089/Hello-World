@@ -1,8 +1,8 @@
-name: Web App Verification
+name: Unit Test Verification
 
 on: 
   push:
-    branches: [ "main" ] # Only runs when you push to the main branch
+    branches: [ "main" ]
 
 jobs:
   verify:
@@ -17,8 +17,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: 3. "The Verification"
+      - name: 3. Run Quality Inspection (Unit Tests)
         run: |
-          echo "Starting verification..."
-          node app.js
-          echo "Verification complete: Code runs successfully!"
+          echo "Starting automated tests..."
+          node test.js
+          echo "All tests passed successfully!"
